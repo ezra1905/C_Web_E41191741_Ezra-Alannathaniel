@@ -1,9 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\ManagementUserController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +10,9 @@ use App\Http\Controllers\ManagementUserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/',[ManagementUserController::class, 'index']);
-Route::get('/create',[ManagementUserController::class, 'create']);
-Route::get('/store',[ManagementUserController::class, 'store']);
-Route::get('/show',[ManagementUserController::class, 'show']);
-Route::get('/edit',[ManagementUserController::class, 'edit']);
-Route::get('/update',[ManagementUserController::class, 'update']);
-Route::get('/destroy',[ManagementUserController::class, 'destroy']);
+//Route: :get('user', 'ManagementUserController@index');
+Route::resource('user', 'ManagementUserController');
+Route::resource('home', 'ManagementUserController');
+// Route::get('/home', function () {
+//     return view('home');
+// });
